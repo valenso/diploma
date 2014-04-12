@@ -1,4 +1,4 @@
-var component = 
+var poligon = 
 {
 	"name" : "component1",
 	"articul" : 1,
@@ -16,4 +16,4 @@ function drawItem(item) {
 	newPath.setEntirePath(item.coordinates);
 }
 if ( app.documents.length > 0 ) 
-	drawItem(component);
+	drawItem(poligon);

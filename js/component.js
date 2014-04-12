@@ -1,4 +1,4 @@
-var component = 
+var poligon = 
 {
 	"name" : "component1",
 	"articul" : 1,
