@@ -1,0 +1,1 @@
+app.defaultStroked = true;
