@@ -4,6 +4,7 @@ if (app.documents.length == 0) {
 else{
 	var currentDoc = app.activeDocument;
 }
+app.defaultStroked = true;
 var component = {
 	"name" : "component1",
 	"articul" : 1,
@@ -15,7 +16,6 @@ var component = {
 					[10,10]
 					]
 };
-app.defaultStroked = true;
 function drawItem(item) {
 	newPath = currentDoc.pathItems.add(); 
 	newPath.setEntirePath(item.coordinates);
