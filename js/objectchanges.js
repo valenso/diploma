@@ -33,6 +33,13 @@ function zoomItem(item, zoom){
     	}
 	}
 
-	newPath = app.activeDocument.pathItems.add(); 
-	newPath.setEntirePath([[maxX,maxY],[maxX,minY],[minX,minY],[minX,maxY],[maxX,maxY]]);
+	var centerX = (maxX - minX)/2 + minX;
+	var centerY = (maxY - minY)/2 + minY;
+
+	for (var index = 0; index < item.coordinates.length; ++index) {
+		item.coordinates[index][0] = (item.coordinates[index][0] - centerX) * zoom + centerX; 
+		item.coordinates[index][1] = (item.coordinates[index][1] - centerY) * zoom + centerY;
+	}
+
+	return true;
 }

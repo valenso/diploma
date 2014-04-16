@@ -1,5 +1,5 @@
 function drawItem(item) {
-	newPath = app.activeDocument.pathItems.add(); 
+	newPath = currentDoc.pathItems.add(); 
 	newPath.setEntirePath(item.coordinates);
 	return true;
 };

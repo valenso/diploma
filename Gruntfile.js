@@ -6,6 +6,7 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
+                    'js/setup.js',
                     'patterns/*.json',
                     'js/*.js'
                 ],

@@ -1,9 +1,14 @@
+if (app.documents.length == 0) {
+	var currentDoc = documents.add();
+}
+else{
+	var currentDoc = app.activeDocument;
+}
 var component = {
 	"name" : "component1",
 	"articul" : 1,
 	"coordinates" : [
 					[10,10],
-					[20,20],
 					[100,10],
 					[100,100],
 					[10,100],
@@ -12,16 +17,13 @@ var component = {
 };
 app.defaultStroked = true;
 function drawItem(item) {
-	newPath = app.activeDocument.pathItems.add(); 
+	newPath = currentDoc.pathItems.add(); 
 	newPath.setEntirePath(item.coordinates);
 	return true;
 };
-if ( app.documents.length > 0 ) {
 	drawItem(component);
-	moveItem(component,-100,-200);
+	zoomItem(component, 2);
 	drawItem(component);
-	zoomItem(component);
-}
 function moveItem(item,x,y){
 	x = typeof x !== 'undefined' ? x : 0;
 	y = typeof y !== 'undefined' ? y : 0;
@@ -57,6 +59,22 @@ function zoomItem(item, zoom){
     	}
 	}
 
-	newPath = app.activeDocument.pathItems.add(); 
-	newPath.setEntirePath([[maxX,maxY],[maxX,minY],[minX,minY],[minX,maxY],[maxX,maxY]]);
+	var centerX = (maxX - minX)/2 + minX;
+	var centerY = (maxY - minY)/2 + minY;
+
+	for (var index = 0; index < item.coordinates.length; ++index) {
+		item.coordinates[index][0] = (item.coordinates[index][0] - centerX) * zoom + centerX; 
+		item.coordinates[index][1] = (item.coordinates[index][1] - centerY) * zoom + centerY;
+	}
+
+	return true;
+}
+function createText(text, position){
+	text = typeof text !== 'undefined' ? text : "I Love Scripting!";
+	position = typeof position !== 'undefined' ? position : [0,0];
+
+	var textRef = currentDoc.textFrames.add(); 
+	textRef.contents = text; 
+	textRef.top = position[0];
+	textRef.left = position[1];
 }

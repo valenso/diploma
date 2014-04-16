@@ -1,6 +1,3 @@
-if ( app.documents.length > 0 ) {
 	drawItem(component);
-	moveItem(component,-100,-200);
+	zoomItem(component, 2);
 	drawItem(component);
-	zoomItem(component);
-}
