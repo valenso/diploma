@@ -21,6 +21,10 @@ function addPosition(message) {
 	text.value += message + ',\n';
 }
 
+function clearCanvas = function () {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	};
+	
 function init()
     {
         var canvas = document.getElementById('myCanvas');
@@ -53,7 +57,7 @@ function init()
 		}, false);
 
 		img.addEventListener("load", function () {
-			//clearCanvas();
+			clearCanvas();
 			context.drawImage(img, 0, 0, canvas.width, canvas.height);
 		}, false);
     }
