@@ -5,6 +5,66 @@ else{
 	var currentDoc = app.activeDocument;
 }
 app.defaultStroked = true;
+var berec = {
+	"name" : "berec",
+	"articul" : 2,
+	"coordinates" : [
+					[436,43],
+[451,33],
+[469,31],
+[492,31],
+[514,36],
+[538,40],
+[555,47],
+[572,54],
+[566,75],
+[562,93],
+[558,119],
+[558,140],
+[558,160],
+[563,178],
+[572,193],
+[582,210],
+[595,225],
+[610,236],
+[622,245],
+[638,257],
+[643,266],
+[636,284],
+[626,297],
+[618,309],
+[607,323],
+[595,335],
+[580,344],
+[557,352],
+[543,355],
+[536,355],
+[533,348],
+[510,345],
+[490,339],
+[474,330],
+[461,321],
+[451,309],
+[434,299],
+[428,288],
+[424,283],
+[427,263],
+[428,242],
+[428,219],
+[428,201],
+[429,185],
+[429,166],
+[429,150],
+[429,130],
+[429,116],
+[429,97],
+[429,80],
+[430,61],
+[432,48],
+[432,41],
+[436,43]
+					]
+};
 var component = {
 	"name" : "component1",
 	"articul" : 1,
@@ -21,9 +81,10 @@ function drawItem(item) {
 	newPath.setEntirePath(item.coordinates);
 	return true;
 };
-	drawItem(component);
-	zoomItem(component, 2);
-	drawItem(component);
+	var element = berec;
+	drawItem(element);
+	zoomItem(element, 1.1);
+	drawItem(element);
 function moveItem(item,x,y){
 	x = typeof x !== 'undefined' ? x : 0;
 	y = typeof y !== 'undefined' ? y : 0;

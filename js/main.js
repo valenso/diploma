@@ -1,3 +1,4 @@
-	drawItem(component);
-	zoomItem(component, 2);
-	drawItem(component);
+	var element = berec;
+	drawItem(element);
+	zoomItem(element, 1.1);
+	drawItem(element);
