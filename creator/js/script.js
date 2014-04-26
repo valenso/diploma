@@ -21,15 +21,15 @@ function addPosition(message) {
 	text.value += message + ',\n';
 }
 
-function clearCanvas = function () {
-	context.clearRect(0, 0, canvas.width, canvas.height);
-	};
-	
 function init()
     {
         var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');
 		img = document.createElement("img");
+
+		clearCanvas = function () {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+		};
 
 		canvas.addEventListener("dragover", function (evt) {
 			evt.preventDefault();
