@@ -38,8 +38,10 @@ function init()
 				$( "#cbtn" ).removeClass("btn-default").addClass("btn-primary active");	
 				iscontur = true;
 			}
-			else
+			else{
 				$( "#cbtn" ).removeClass("btn-primary active").addClass("btn-default");	
+				iscontur = false;
+			}
 		}, false);
 
 		canvas.addEventListener("dragover", function (evt) {
