@@ -8,7 +8,12 @@ app.defaultStroked = true;
 var berec = {
 	"name" : "berec",
 	"articul" : 2,
-	"coordinates" : [
+	"contur" :[
+		[0],
+		[1],
+		[1]
+	],
+	"allCoordinates" : [
 					[436,43],
 [451,33],
 [469,31],
@@ -68,6 +73,10 @@ var berec = {
 var component = {
 	"name" : "component1",
 	"articul" : 1,
+	"conturCoordinates" : [
+		[10,10],
+		[100,10]
+	],
 	"coordinates" : [
 					[10,10],
 					[100,10],
@@ -81,10 +90,17 @@ function drawItem(item) {
 	newPath.setEntirePath(item.coordinates);
 	return true;
 };
-	var element = berec;
+
+function drawConturItem(item){
+	newPath = currentDoc.pathItems.add(); 
+	newPath.setEntirePath(item.conturCoordinates);
+	return true;
+}
+	var element = component;
 	drawItem(element);
-	zoomItem(element, 1.1);
+	zoomItem(element, 1.5);
 	drawItem(element);
+	drawConturItem(element);
 function moveItem(item,x,y){
 	x = typeof x !== 'undefined' ? x : 0;
 	y = typeof y !== 'undefined' ? y : 0;

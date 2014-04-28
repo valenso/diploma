@@ -16,9 +16,20 @@ function getMousePos(canvas, evt) {
     };
 }
 
-function addPosition(message) {
+function addPosition(x,y,iscontur) {
+	var message = '[' + x + ',' + y + '],\n';
 	var text = document.getElementById('text');
-	text.value += message + ',\n';
+	text.value += message;
+	if(!iscontur){
+		var message = '[' + x + ',' + y + '],\n';
+		var text = document.getElementById('helptext');
+		text.value += message;
+	}
+}
+
+function addConturMes(x,y){
+	var text = document.getElementById('helptext');
+	text.value += '[' + +iscontur + '],\n';
 }
 
 function init()
@@ -65,8 +76,7 @@ function init()
         
         canvas.addEventListener('mousedown', function(evt){
 			var mousePos = getMousePos(canvas, evt);
-    		var message = '[' + mousePos.x + ',' + mousePos.y + ',' + +iscontur + ']';
-    		addPosition(message);
+    		addPosition(mousePos.x,mousePos.y,iscontur);
 		}, false);
 
 		img.addEventListener("load", function () {

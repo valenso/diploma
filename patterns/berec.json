@@ -1,7 +1,12 @@
 var berec = {
 	"name" : "berec",
 	"articul" : 2,
-	"coordinates" : [
+	"contur" :[
+		[0],
+		[1],
+		[1]
+	],
+	"allCoordinates" : [
 					[436,43],
 [451,33],
 [469,31],
