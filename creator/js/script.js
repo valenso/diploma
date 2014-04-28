@@ -26,7 +26,7 @@ function init()
         var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');
 		var contur = document.getElementById('cbtn');
-		var addpoint = false;
+		var iscontur = false;
 		img = document.createElement("img");
 
 		clearCanvas = function () {
@@ -34,8 +34,10 @@ function init()
 		};
 
 		contur.addEventListener("mousedown", function(evt){
-			if ($( "#cbtn" ).hasClass("btn-default"))
+			if ($( "#cbtn" ).hasClass("btn-default")){
 				$( "#cbtn" ).removeClass("btn-default").addClass("btn-primary active");	
+				iscontur = true;
+			}
 			else
 				$( "#cbtn" ).removeClass("btn-primary active").addClass("btn-default");	
 		}, false);
@@ -61,7 +63,7 @@ function init()
         
         canvas.addEventListener('mousedown', function(evt){
 			var mousePos = getMousePos(canvas, evt);
-    		var message = '[' + mousePos.x + ',' + mousePos.y + ']';
+    		var message = '[' + mousePos.x + ',' + mousePos.y + ',' + +iscontur + ']';
     		addPosition(message);
 		}, false);
 
