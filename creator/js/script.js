@@ -25,11 +25,20 @@ function init()
     {
         var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');
+		var contur = document.getElementById('cbtn');
+		var addpoint = false;
 		img = document.createElement("img");
 
 		clearCanvas = function () {
 			context.clearRect(0, 0, canvas.width, canvas.height);
 		};
+
+		contur.addEventListener("mousedown", function(evt){
+			if ($( "#cbtn" ).hasClass("btn-default"))
+				$( "#cbtn" ).removeClass("btn-default").addClass("btn-primary active");	
+			else
+				$( "#cbtn" ).removeClass("btn-primary active").addClass("btn-default");	
+		}, false);
 
 		canvas.addEventListener("dragover", function (evt) {
 			evt.preventDefault();
