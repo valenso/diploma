@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html>
+  <!-- Заголовок документа содержит ссылки на подключаемые файлы -->
   <head>
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/script.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
   </head>
+  <!-- Тело документа содержит контент,который отображается пользователю -->
   <body>
   	<div class="container">
   		<div class="row">
@@ -13,10 +15,12 @@
   				<h1>Оцифровка фотографий</h1>
   			</div>
   			<div class="col-md-8">
+          <!-- canvas позволяет отображать изображания и/или изменять их -->
   				<canvas id="myCanvas"></canvas>
 				<button id="cbtn" type="button" class="btn btn-default btn-lg">Контур</button> 
   			</div>
   			<div class="col-md-2">
+          <!-- textarea - теги для получения текста -->
   				<textarea class="form-control" id="text" rows=30></textarea>
   			</div>
   			<div class="col-md-2">
